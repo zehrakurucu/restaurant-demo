@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -32,3 +33,6 @@
   color: black;
   font-size:medium;
 }
+.customized{
+  --overflow: hidden !important;
+  }

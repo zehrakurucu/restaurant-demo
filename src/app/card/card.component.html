@@ -1,36 +1,39 @@
-<ion-content [fullscreen]="true">
-  <ion-card *ngFor="let restaurant of restaurants" class="custom-card">
-    <div class="image-container">
-      <ion-img [src]="restaurant.images[0]?.base64" class="restaurant-image"></ion-img>
-      <div class="rating-container">
-        <ion-icon name="star" class="rating-icon"></ion-icon>
-        <span class="rating">{{ restaurant.storeInfo.rate | number:'1.1-1' }}</span>
-      </div>
-    </div>
-    <ion-card-header>
-      <ion-card-title>{{ restaurant.title }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="left-align">
-        <div class="location">
-          <ion-card-subtitle>{{ restaurant.location.type }}</ion-card-subtitle>
-        </div>
-        <div class="right-align" slot="end">
-          <ion-icon name="basket" class="basket-icon"></ion-icon>
-          <ion-text>Min. Sipariş Tutarı: {{ restaurant.storeInfo.minOrderPrice }}</ion-text>
+<ion-content [fullscreen]="true" class="custom-content">
+  <div class="customized">
+    <ion-card *ngFor="let restaurant of restaurants" class="custom-card">
+      <div class="image-container">
+        <ion-img [src]="restaurant.images[0]?.base64" class="restaurant-image"></ion-img>
+        <div class="rating-container">
+          <ion-icon name="star" class="rating-icon"></ion-icon>
+          <span class="rating">{{ restaurant.storeInfo.rate | number:'1.1-1' }}</span>
         </div>
       </div>
-      <div class="details">
+      <ion-card-header>
+        <ion-card-title>{{ restaurant.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
         <div class="left-align">
-          <span class="distance">{{ restaurant.distance | number:'1.1-1' }} km yakınında</span>
+          <div class="location">
+            <ion-card-subtitle>{{ restaurant.location.type }}</ion-card-subtitle>
+          </div>
+          <div class="right-align" slot="end">
+            <ion-icon name="basket" class="basket-icon"></ion-icon>
+            <ion-text>Min. Sipariş Tutarı: {{ restaurant.storeInfo.minOrderPrice }}</ion-text>
+          </div>
         </div>
-        <div class="right-align">
-          <span class="status">{{ restaurant.isOpen ? 'İşletme Açık' : 'İşletme Kapalı' }}</span>
-          <ion-text>{{ restaurant.storeInfo.workingHours[0]?.open }} - {{ restaurant.storeInfo.workingHours[0]?.close }}</ion-text>
+        <div class="details">
+          <div class="left-align">
+            <span class="distance">{{ restaurant.distance | number:'1.1-1' }} km yakınında</span>
+          </div>
+          <div class="right-align">
+            <span class="status">{{ restaurant.isOpen ? 'İşletme Açık' : 'İşletme Kapalı' }}</span>
+            <ion-text>{{ restaurant.storeInfo.workingHours[0]?.open }} - {{ restaurant.storeInfo.workingHours[0]?.close }}</ion-text>
+          </div>
         </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">

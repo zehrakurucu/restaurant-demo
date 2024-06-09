@@ -9,13 +9,14 @@ import { Geolocation } from '@capacitor/geolocation';
 })
 export class RestaurantService {
   private apiUrl = environment.apiUrl;
+  private apiKey = environment.apiKey;
 
   constructor(private http: HttpClient) {}
 
 
   getRestaurants(latitude: number, longitude: number, page: number): Observable<any> {
   const headers = new HttpHeaders({
-    'apiKey': 'bW9jay04ODc3NTU2NjExMjEyNGZmZmZmZmJ2'
+    'apiKey': this.apiKey
   });
  
   const skip = (page - 1) * 10;
