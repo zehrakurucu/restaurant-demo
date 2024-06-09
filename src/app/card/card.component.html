@@ -14,11 +14,11 @@
       <ion-card-content>
         <div class="left-align">
           <div class="location">
-            <ion-card-subtitle>{{ restaurant.location.type }}</ion-card-subtitle>
+            <ion-card-subtitle>{{ restaurant.type }}</ion-card-subtitle>
           </div>
           <div class="right-align" slot="end">
             <ion-icon name="basket" class="basket-icon"></ion-icon>
-            <ion-text>Min. Sipariş Tutarı: {{ restaurant.storeInfo.minOrderPrice }}</ion-text>
+            <ion-text>Min. Sipariş Tutarı: ₺{{ restaurant.storeInfo.minOrderPrice }}</ion-text>
           </div>
         </div>
         <div class="details">
@@ -27,7 +27,7 @@
           </div>
           <div class="right-align">
             <span class="status">{{ restaurant.isOpen ? 'İşletme Açık' : 'İşletme Kapalı' }}</span>
-            <ion-text>{{ restaurant.storeInfo.workingHours[0]?.open }} - {{ restaurant.storeInfo.workingHours[0]?.close }}</ion-text>
+            <ion-text>{{ restaurant.storeInfo.workingHours[0]?.open }} / {{ restaurant.storeInfo.workingHours[0]?.close }}</ion-text>
           </div>
         </div>
       </ion-card-content>
