@@ -1,0 +1,106 @@
+.custom-card {
+  margin: 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .restaurant-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .rating-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 6px;
+      color: white;
+      background-color: #B70014;
+      height: 32px;
+      width: 50px;
+    }
+
+    .rating-icon {
+      color: #fff;
+      margin-right: 2px;
+      width: 12.5px;
+      height: 12.5px;
+    }
+
+    .rating {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .order-amount {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .basket-icon {
+    margin-right: 4px;
+    color: #000;
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-align {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .right-align {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    font-weight: bold;
+  }
+
+  .location {
+    margin-right: 16px;
+  }
+
+  ion-text {
+    margin-left: 4px;
+  }
+
+  .category {
+    margin-bottom: 8px;
+  }
+
+  .status {
+    margin-right: 4px;
+    color: #34C47C;
+  }
+
+  .distance {
+    font-weight: bold;
+    color: black;
+  }
+}
+
